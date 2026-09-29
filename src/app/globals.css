@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #09090b;
+  --card-bg: #ffffff;
+  --card-border: #f1f5f9;
+  --muted-text: #64748b;
+  --accent-color: #d946ef;
+}
+
+.dark {
+  --background: #09090b;
+  --foreground: #f4f4f5;
+  --card-bg: #111216;
+  --card-border: #27272a;
+  --muted-text: #a1a1aa;
+  --accent-color: #f472b6;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #d946ef;
+  color: #ffffff;
+}
+
+.dark ::selection {
+  background-color: #f43f5e;
+  color: #ffffff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
